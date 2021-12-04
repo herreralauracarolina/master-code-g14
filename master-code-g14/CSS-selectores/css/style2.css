@@ -1,0 +1,32 @@
+body{
+    font-size: 18px;
+    font-family:'Times New Roman', Times, serif;
+    margin:0%;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.imagen{
+    height: 250px
+}
+nav a{
+    text-decoration: none;
+    color:darkred
+}
+nav a:hover{
+    color:darkslateblue;
+    text-decoration: forestgreen;
+}
+h1,p, div{
+    text-align: center;
+}
+div{
+    border: 2px;color:gold;
+}
+ul li{
+    color:goldenrod;
+}
+ul li:nth-child(odd){
+    font-style: italic;
+}

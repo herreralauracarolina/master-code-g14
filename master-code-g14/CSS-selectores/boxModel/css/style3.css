@@ -1,0 +1,16 @@
+header{
+    background-color: lemonchiffon;
+    height: 50px
+}
+aside{
+    background-color: lightcoral;
+    height: 50px
+}
+main{
+    background-color: lightpink;
+    height: 50px;
+}
+footer{
+    background-color: lightskyblue;
+    height: 50px;
+}
