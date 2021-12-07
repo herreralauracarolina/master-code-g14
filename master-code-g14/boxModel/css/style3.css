@@ -1,3 +1,15 @@
+body{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+header, main, footer{
+    border: 1px solid; color: black;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;  
+}
+
 header{
     background-color: lemonchiffon;
     height: 50px

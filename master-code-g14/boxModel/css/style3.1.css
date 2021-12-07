@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+}
+header{
+    background-color: brown;
+    height: 10vh;
+}
+aside{
+    background-color: burlywood;
+    float: left;
+    height: 80vh;
+    width: 20%;
+}
+main{
+    background-color: chocolate;
+    float: right;
+    height: 80vh;
+    width: 80%;
+}
+footer{
+    position: fixed;
+    background-color: cornsilk;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+}

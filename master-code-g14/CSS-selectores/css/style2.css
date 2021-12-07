@@ -28,5 +28,5 @@ ul li{
     color:goldenrod;
 }
 ul li:nth-child(odd){
-    font-style: italic;
+    font-style: italic; color:mediumpurple; 
 }
