@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+}
+main{
+    background-color: cornflowerblue;
+    display:grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+article{
+    background-color: darkgoldenrod;
+    height: 10vh;
+}
+.item1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.item2{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.item3{
+    grid-column-start: 3;
+    grid-column-end: 8;
+}
