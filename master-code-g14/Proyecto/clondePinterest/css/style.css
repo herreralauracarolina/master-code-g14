@@ -1,0 +1,121 @@
+*, body{
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    margin: 0;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px;
+    width: 100%
+}
+nav a{
+    padding: 10px;
+}
+.primeraParte{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 15%;
+}
+.segundaParte{
+    display: flex;
+    width: 100%;
+}
+.terceraParte{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 18%;
+}
+.barraBuscadora{
+    align-items: flex-end;
+    background-color: #f3f0f0d8;
+    border-color: transparent;
+    border-radius: 25px;
+    padding: 12px 12px 12px 35px;
+    width: 100%
+}
+.logo{
+    width: 30px;
+    height: 26px;
+}
+.inicio{
+    background-color: black;
+    border-radius: 25px;
+    border-width: 2px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px;
+}
+.hoy{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.lupa{
+    color: grey;
+    display: inline;
+    font-size: 150%;
+    font-weight: bold;
+    position: absolute;
+    left: 200px;
+    top: 41px;
+
+}
+.campana{
+    color: gray;
+    font-size: 200%;
+}
+.comentario{
+    color: grey;
+    font-size: 200%;
+}
+.usuario{
+    color: grey;
+    font-size: 200%;
+}
+.descendiente{
+    color: grey;
+    font-size: 200%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 16px;
+    row-gap: 1px;
+    padding: 0 10px;
+}
+article img{
+    border-radius: 18px;
+}
+.usuario1{
+    align-items: center;
+    display: flex;
+    flex: row;
+    flex-wrap: nowrap;
+    font-weight: 300;
+    justify-content: flex-start;
+}
+.usuario1 img{
+    border-radius: 50px;
+    padding: 5px;
+    width: 15%;
+}
+
+.jap1{
+    background-color: whitesmoke;
+    height: 2rem;
+}
+
+.jap2{
+    background-color: whitesmoke;
+    height: 3rem;
+}

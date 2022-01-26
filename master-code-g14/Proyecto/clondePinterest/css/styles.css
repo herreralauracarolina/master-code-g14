@@ -1,0 +1,94 @@
+body{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+}
+header{
+    background-color: moccasin;
+    display:flex;
+    justify-content: space-between;
+    height: 10vh;
+    padding: 0 5px;
+}
+h1, nav{
+    display: inline-block;
+}
+h1, nav a{
+    color:olivedrab
+}
+h1{
+    margin:0;
+    font-size: 2rem;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+}
+nav a{
+    font-size: 1.2rem;
+    text-decoration:none;
+    padding: 15px 10 px;
+}
+nav a:hover{
+    background-color:salmon;
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+aside, section{
+    height: 80vh;
+}
+aside{
+    align-items: center;
+    background-color: rgb(83, 88, 81);
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+}
+aside a{
+    color: black;
+    font-size: 1rem;
+    padding: 5px, o;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+aside a:hover{
+    background-color: chocolate;
+}
+section{
+    background-color: peru;
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+}
+article{
+    flex: 1 1 30%;
+    text-align: center;
+}
+img{
+    height: 100px;
+}
+footer{
+    align-items: center;
+    background-color: plum;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+}
+p, footer a{
+    color:snow;
+    font-size: 1rem;
+}
+p{
+    display: inline;
+    margin: 0;
+}
+.marginIzq{
+    margin-left: 5px;
+}
