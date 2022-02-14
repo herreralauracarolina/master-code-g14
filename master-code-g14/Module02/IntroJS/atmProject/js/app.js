@@ -57,3 +57,11 @@ function validacionUsuario() {
     }
     return bandera;
 }
+
+function validarBandera() {
+    if (validacionUsuario()) {
+        alert(`Bienvenido `);
+    } else {
+        alert(`Adios, tú no existes y nadie te quiere`);
+    }
+}
