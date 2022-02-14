@@ -16,14 +16,6 @@ const cuentas = {
     }
 };
 
-function prueba(){    
-    for (let index = 0; index < Object.keys(cuentas).length; index++) {
-        //let propery = Object.keys(cuentas)[index];
-        let element = cuentas[Object.keys(cuentas)[index]].nip;//cuentas es el objeto, lo que está entre [] es su propiedad y .nip es sólo para acceder del segundo objeto.
-        console.log(`Soy los nips: ${element}`);       
-    };
-}
-
 function input(id) {
     return document.getElementById(id).value;
 };
@@ -46,22 +38,41 @@ function validacionUsuario() {
                 bandera = true;
             }
             else{
-                bandera = false;
             }        
     }
     if(bandera){
         validacioNip(cliente);
     }
     else{
-        alert("Hay algun error en los datos que ingresaste.")
+        alert("Hay algun error en los datos que ingresaste.");
     }
     return bandera;
-}
+};
 
-function validarBandera() {
-    if (validacionUsuario()) {
-        alert(`Bienvenido `);
-    } else {
-        alert(`Adios, tú no existes y nadie te quiere`);
+function consultarSaldo(cliente) {
+    return alert(`Su saldo disponible es de $${cuentas[cliente].saldo}`);
+};
+
+function ingresarMonto(cliente) {
+    let deposito = Number(prompt("Ingresa el monto a depositar"));
+    let nuevoSaldo = cuentas[cliente].saldo + deposito;
+    alert(`${cuentas[cliente].nombreCompleto} ingresaste $${deposito}, tu nuevo total es de $${nuevoSaldo}`)
+};
+
+function retirarMonto(cliente) {
+    let retiro = Number(prompt("Ingresa el monto a retirar"));
+    let nuevoSaldo = cuentas[cliente].saldo - retiro;
+    let validacion = reglaDeNegocio(nuevoSaldo);
+    if(validacion){
+        alert(`${cuentas[cliente].nombreCompleto} retiraste $${retiro}, tu nuevo total es de $${nuevoSaldo}`)
     }
-}
+};
+
+function reglaDeNegocio(nuevoSaldo) {
+    if(nuevoSaldo > 990 || nuevoSaldo < 10){
+        alert("Operaciòn invalidad") 
+        return false;
+    }
+    else{
+    }
+};
