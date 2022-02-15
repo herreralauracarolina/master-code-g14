@@ -16,6 +16,8 @@ const cuentas = {
     }
 };
 
+let cuentaInput;
+
 /*Función que encuentra un elemento en el HTML y devuelve su valor*/
 function input(id) {
     return document.getElementById(id).value;
@@ -54,24 +56,23 @@ function validacioNip(cliente) {
 
 /*Función que valida el numero de cuenta ingresado por el cliente contra el de la base de datos*/
 function validacionUsuario() {
-    // enter("NIP", "entre");
-    let cliente = input("Cuenta");
+    cuentaInput = input("Cuenta");
     let bandera = false;
     for (let index = 0; index < Object.keys(cuentas).length; index++) {
         if(bandera == true) {break;}
         let element = Object.keys(cuentas)[index];
-            if (cliente == element){
+            if (cuentaInput == element){
                 bandera = true;
             }
             else{
             }        
     }
-    // if(bandera){
-    //     validacioNip(cliente);
-    // }
-    // else{
-    //     alert("Hay algun error en los datos que ingresaste.");
-    // }
+    if(bandera){
+        validacioNip(cuentaInput);
+    }
+    else{
+        alert("Hay algun error en los datos que ingresaste.");
+    }
     return bandera;
 };
 
@@ -132,12 +133,21 @@ function opciones(cliente, input) {
     }
 }
 
-function enter(idText, idButton) {
-    let input = document.getElementById(idText);
-    input.addEventListener("keyup", function(event){
-        if (`KeyboardEvent: key ='${event.key}'` === 13) {
-            event.preventDefault;
-            document.getElementById(idButton).click;
-        }
-    })
-}
+document.getElementById("NIP").addEventListener("keyup", function(event) {
+    if (`KeyboardEvent: key ='${event.key}'` === 13) {
+        event.preventDefault();
+        document.getElementById("entre").click();
+    }
+});
+
+document.getElementById("saldo").addEventListener("click", function(){
+    consultarSaldo(cuentaInput);
+});
+
+document.getElementById("ingresar").addEventListener("click", function(){
+    ingresarMonto(cuentaInput);
+});
+
+document.getElementById("retirar").addEventListener("click", function(){
+    retirarMonto(cuentaInput);
+});
