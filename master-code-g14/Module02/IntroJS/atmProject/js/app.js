@@ -54,6 +54,7 @@ function validacioNip(cliente) {
 
 /*Función que valida el numero de cuenta ingresado por el cliente contra el de la base de datos*/
 function validacionUsuario() {
+    // enter("NIP", "entre");
     let cliente = input("Cuenta");
     let bandera = false;
     for (let index = 0; index < Object.keys(cuentas).length; index++) {
@@ -84,7 +85,7 @@ function ingresarMonto(cliente) {
     let deposito = Number(prompt("Ingresa el monto a depositar"));
     let nuevoSaldo = cuentas[cliente].saldo + deposito;
     if(reglaDeNegocio(nuevoSaldo)){
-        alert(`${cuentas[cliente].nombreCompleto} ingresaste $${deposito}, tu nuevo total es de $${nuevoSaldo}`);
+        alert(`Tú deposito fue por $${deposito} y tu nuevo total es de $${nuevoSaldo}`);
         cuentas[cliente].saldo = nuevoSaldo;
     }
 };
@@ -94,7 +95,7 @@ function retirarMonto(cliente) {
     let retiro = Number(prompt("Ingresa el monto a retirar"));
     let nuevoSaldo = cuentas[cliente].saldo - retiro;
     if(reglaDeNegocio(nuevoSaldo)){
-        alert(`${cuentas[cliente].nombreCompleto} retiraste $${retiro}, tu nuevo total es de $${nuevoSaldo}`);
+        alert(`Tú retiro fue por $${retiro} y tu nuevo total es de $${nuevoSaldo}`);
         cuentas[cliente].saldo = nuevoSaldo;
     }
 };
@@ -112,21 +113,31 @@ function reglaDeNegocio(nuevoSaldo) {
 };
 
 
-function opciones(cliente) {
-    switch (key) {
-        case value:
+function opciones(cliente, input) {
+    switch (input) {
+        case 1:
             consultarSaldo(cliente);
             break;
 
-        case value:
+        case 2: 
             ingresarMonto(cliente);
             break;
         
-        case value:
+        case 3:
             retirarMonto(cliente);
             break;
     
         default:
             break;
     }
+}
+
+function enter(idText, idButton) {
+    let input = document.getElementById(idText);
+    input.addEventListener("keyup", function(event){
+        if (`KeyboardEvent: key ='${event.key}'` === 13) {
+            event.preventDefault;
+            document.getElementById(idButton).click;
+        }
+    })
 }
