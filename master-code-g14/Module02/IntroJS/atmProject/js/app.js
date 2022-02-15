@@ -16,18 +16,43 @@ const cuentas = {
     }
 };
 
+/*Función que encuentra un elemento en el HTML y devuelve su valor*/
 function input(id) {
     return document.getElementById(id).value;
 };
 
+/*Función que da la hora y los minutos del día en formato 24hrs*/
+function horaDelDia() {
+    var date = new Date;
+    return (`${date.getHours()}${date.getMinutes()}`);
+};
+
+/*Función que da las Buenas... según la hora del día*/
+function saludoPorHora(cliente) {
+    let saludo;
+    let hora = horaDelDia();
+    if(hora >= "0000" && hora <= "1159"){
+        saludo = `Buenos días ${cuentas[cliente].nombreCompleto}`;
+    }
+    else if(hora >= "1200" && hora <= "1859"){
+        saludo = `Buenas tardes ${cuentas[cliente].nombreCompleto}`
+    }
+    else{
+        saludo = `Buenas noches ${cuentas[cliente].nombreCompleto}`
+    }
+    return saludo;
+};
+
+/*Función que valida el nip ingresado por el cliente contra el de la base de datos*/
 function validacioNip(cliente) {
     let nipInput = input("NIP");
     let nipCliente = cuentas[cliente].nip;
     if(nipInput == nipCliente){
-        alert(`Bienevenido ${cuentas[cliente].nombreCompleto}`)
+        alert(saludoPorHora(cliente))
     }
 }
 
+/*Función que valida el numero de cuenta ingresado por el cliente contra el de la base de datos*/
 function validacionUsuario() {
     let cliente = input("Cuenta");
     let bandera = false;
@@ -40,39 +65,68 @@ function validacionUsuario() {
             else{
             }        
     }
-    if(bandera){
-        validacioNip(cliente);
-    }
-    else{
-        alert("Hay algun error en los datos que ingresaste.");
-    }
+    // if(bandera){
+    //     validacioNip(cliente);
+    // }
+    // else{
+    //     alert("Hay algun error en los datos que ingresaste.");
+    // }
     return bandera;
 };
 
+/*Función que regresa el saldo en la cuenta*/
 function consultarSaldo(cliente) {
     return alert(`Su saldo disponible es de $${cuentas[cliente].saldo}`);
 };
 
+/*Función que regresa el monto a depositar y el monto nuevo*/
 function ingresarMonto(cliente) {
     let deposito = Number(prompt("Ingresa el monto a depositar"));
     let nuevoSaldo = cuentas[cliente].saldo + deposito;
-    alert(`${cuentas[cliente].nombreCompleto} ingresaste $${deposito}, tu nuevo total es de $${nuevoSaldo}`)
+    if(reglaDeNegocio(nuevoSaldo)){
+        alert(`${cuentas[cliente].nombreCompleto} ingresaste $${deposito}, tu nuevo total es de $${nuevoSaldo}`);
+        cuentas[cliente].saldo = nuevoSaldo;
+    }
 };
 
+/*Función que regresa el monto a retirar y el monto nuevo*/
 function retirarMonto(cliente) {
     let retiro = Number(prompt("Ingresa el monto a retirar"));
     let nuevoSaldo = cuentas[cliente].saldo - retiro;
-    let validacion = reglaDeNegocio(nuevoSaldo);
-    if(validacion){
-        alert(`${cuentas[cliente].nombreCompleto} retiraste $${retiro}, tu nuevo total es de $${nuevoSaldo}`)
+    if(reglaDeNegocio(nuevoSaldo)){
+        alert(`${cuentas[cliente].nombreCompleto} retiraste $${retiro}, tu nuevo total es de $${nuevoSaldo}`);
+        cuentas[cliente].saldo = nuevoSaldo;
     }
 };
 
+/*Función que valida las condiciones de la tara sobre el saldo disponible*/
 function reglaDeNegocio(nuevoSaldo) {
     if(nuevoSaldo > 990 || nuevoSaldo < 10){
-        alert("Operaciòn invalidad") 
+        alert("Operación invalidad");
         return false;
     }
     else{
+        
     }
+    return true;
 };
+
+
+function opciones(cliente) {
+    switch (key) {
+        case value:
+            consultarSaldo(cliente);
+            break;
+
+        case value:
+            ingresarMonto(cliente);
+            break;
+        
+        case value:
+            retirarMonto(cliente);
+            break;
+    
+        default:
+            break;
+    }
+}
