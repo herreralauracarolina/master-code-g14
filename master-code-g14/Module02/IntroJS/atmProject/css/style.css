@@ -4,3 +4,8 @@
     font-weight: bold;
     height: 100vh;
 }
+
+#togglePassword {
+    margin-left: -30px;
+    cursor: pointer;
+}

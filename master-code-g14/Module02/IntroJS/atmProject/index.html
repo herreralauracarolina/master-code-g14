@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="css/style.css"> <!--Debe estar abajo del materialize -->
 
@@ -18,20 +18,23 @@
                 <h1>Banco Asakura</h1>
                 </div>
                 <div>
-                    <h3 id="nombre"></h3>
+                    <h5 id="nombre"></h5>
                 </div>
                 <div>
-                    <label>Número de Cuenta<input type="text" id="Cuenta" name="Cuenta" maxlength="6"/></label>
-                    <label>NIP<input type="password" id="NIP" name="NIP" maxlength="4"/></label>
-                    <button type="submit" id="entre" onclick="ejecucion()">Entre</button>
+                    <label>Número de Cuenta<input type="text" id="Cuenta" name="Cuenta" maxlength="6"/></label>                    
                 </div>
+                <div>
+                    <label>NIP<input type="password" id="NIP" name="NIP" maxlength="4"/></label>
+                    <i class="bi bi-eye-slash" id="togglePassword"></i>
+                </div>
+                <button type="submit" id="entre" onclick="ejecucion()">Entre</button>
                 <div>
                     <button id="saldo">Consultar Saldo</button>
                     <button id="ingresar">Ingresar Monto</button>
                     <button id="retirar">Retirar Monto</button>
                 </div>
                 <div>
-                    <p id="consola"></p>
+                    <pre id="consola"></pre>
                 </div>
 </body>
             

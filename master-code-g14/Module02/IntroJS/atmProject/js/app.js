@@ -125,6 +125,13 @@ document.getElementById("NIP").addEventListener("keyup", function(event) {
     }
 });
 
+/*Activa o desavtiva la visibilidad del campo NIP y cambia la imagen del ojo de password*/
+document.getElementById("togglePassword").addEventListener('click', function (e) {
+    const type = document.getElementById("NIP").getAttribute('type') === 'password' ? 'text' : 'password';
+    document.getElementById("NIP").setAttribute('type', type);
+    this.classList.toggle('bi-eye');
+});
+
 /*Función que ejecuta las funciones*/
 function ejecucion() {
     if (validacionUsuario()) {
@@ -148,6 +155,4 @@ function ejecucion() {
     else {
         alert("Hay algun error en los datos que ingresaste.");
     }
-}
-
-//html input required
+};
