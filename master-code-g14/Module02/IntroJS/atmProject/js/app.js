@@ -78,10 +78,15 @@ function validacioNip(cliente) {
     }
     return bandera;
 }
+
+/*Función que imprime mensaje en una sección del HTML*/
+function printMessage(message) {
+    document.getElementById("print").innerHTML = message;
+}
+
 /*Función que regresa el saldo en la cuenta*/
 function consultarSaldo(cliente) {
-    return document.getElementById("consola").innerHTML = `Su saldo disponible es de $${cuentas[cliente].saldo}`;
-    //return alert(`Su saldo disponible es de $${cuentas[cliente].saldo}`);
+    return printMessage(`Su saldo disponible es de $${cuentas[cliente].saldo}`);
 };
 
 /*Función que regresa el monto a depositar y el monto nuevo*/
@@ -89,8 +94,7 @@ function ingresarMonto(cliente) {
     let deposito = Number(prompt("Ingresa el monto a depositar"));
     let nuevoSaldo = cuentas[cliente].saldo + deposito;
     if(reglaDeNegocio(nuevoSaldo)){
-        document.getElementById("consola").innerHTML = `Tú deposito fue por $${deposito} y tu nuevo total es de $${nuevoSaldo}`;
-        //alert(`Tú deposito fue por $${deposito} y tu nuevo total es de $${nuevoSaldo}`);
+        printMessage(`Tú deposito fue por $${deposito} y tu nuevo total es de $${nuevoSaldo}`);
         cuentas[cliente].saldo = nuevoSaldo;
     }
 };
@@ -100,8 +104,7 @@ function retirarMonto(cliente) {
     let retiro = Number(prompt("Ingresa el monto a retirar"));
     let nuevoSaldo = cuentas[cliente].saldo - retiro;
     if(reglaDeNegocio(nuevoSaldo)){
-        document.getElementById("consola").innerHTML = `Tú retiro fue por $${retiro} y tu nuevo total es de $${nuevoSaldo}`;
-        //alert(`Tú retiro fue por $${retiro} y tu nuevo total es de $${nuevoSaldo}`);
+        printMessage(`Tú retiro fue por $${retiro} y tu nuevo total es de $${nuevoSaldo}`);
         cuentas[cliente].saldo = nuevoSaldo;
     }
 };
