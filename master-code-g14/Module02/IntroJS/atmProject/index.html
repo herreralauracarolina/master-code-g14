@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,34 +10,48 @@
     <link rel="stylesheet" href="css/style.css"> <!--Debe estar abajo del materialize -->
 
     <title>Cajero Automático</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
+
 </head>
-<body>
-    <main>
-        <body>
-            <div class="container-fluid contenedor #fce4ec pink lighten-5 center-align"> <!--container es de materializa y contenedor es mía-->
-                <h1>Banco Asakura</h1>
+<body class="bodyLogin">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l8 offset-12 loginDiv">
+                <div class="row loginContainer">
+                    <div class="col s12 m6">
+                        <div class="col s11 offset-s1"></div>
+                        <img src="img/bank-kitten.jpeg" class="responsive-img">
+                    </div>
                 </div>
-                <div>
-                    <h3 id="nombre"></h3>
+                <div class="col 12 s12 m5 l5 offset-l1 offset-m1">
+                    <div class="bancoTitle">
+                    <h5>Banco Asakura</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 customInput">
+                            <label for="Cuenta"></label>
+                            <input type="text" id="Cuenta" maxlength="6" placeholder="Usuario">
+                        </div>
+                        <div class="col s12 customInput">
+                            <label for="NIP"></label>
+                            <input type="password" id="NIP" maxlength="4" placeholder="NIP">
+                        </div>
+                        </div>
+                    <div class="row">
+                        <button class="btn col s12 btnlogIn brown lighten-5" type="submit" onclick="ValidacionUsuario()">Let's get that ramen!</button>
+                    </div>    
+                    </div>
                 </div>
-                <div>
-                    <label>Número de Cuenta<input type="text" id="Cuenta" name="Cuenta" maxlength="6"/></label>
-                    <label>NIP<input type="password" id="NIP" name="NIP" maxlength="4"/></label>
-                    <button type="submit" id="entre" onclick="ejecucion()">Entre</button>
-                </div>
-                <div>
-                    <button id="saldo">Consultar Saldo</button>
-                    <button id="ingresar">Ingresar Monto</button>
-                    <button id="retirar">Retirar Monto</button>
-                </div>
-                <div>
-                    <p id="consola"></p>
-                </div>
-</body>
-            
-        </form>
-    </main>
-<script src="js/app.js"></script>    
+            </div>
+        </div>
+        
+    </div>
+
 </body>
 
 </html>

@@ -1,6 +1,56 @@
-.contenedor{
-    color:darkgoldenrod;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
+.bodyLogin{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 19%, rgba(189,145,106,1) 77%);
+    width: 100vw;
     height: 100vh;
 }
+
+.loginDiv{
+    border-radius: 18px;
+    background-color:white;
+    height: auto;
+    top: 20vh;
+    position: relative;
+    width: 100%;
+}
+
+.loginContainer{
+    padding: 30px;
+}
+
+.bancoTitle{
+    width: 50%;
+    text-align: center;
+}
+.bancoTitle h5{
+    font-family: 'Times New Roman', Times, serif;
+    color:indianred;
+    font-weight: bold;
+
+}
+
+.customInput{
+    background-color:antiquewhite;
+    border-radius: 100px;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+.customInput input{
+    position:relative;
+    border-style: none;
+    padding-left: 30px;
+}
+
+.btnlogIn{
+    border-radius: 100px;
+    color:indianred;
+    
+}
+.btn:hover{
+    color: darkgray;
+}
+
+

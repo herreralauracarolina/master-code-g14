@@ -25,7 +25,7 @@ function input(id) {
 
 /*Función que da la hora y los minutos del día en formato 24hrs*/
 function horaDelDia() {
-    var date = new Date;
+    var date = new Date; 
     return (`${date.getHours()}${date.getMinutes()}`);
 };
 
@@ -151,3 +151,5 @@ function ejecucion() {
 }
 
 //html input required
+
+
