@@ -18,16 +18,21 @@
                 <h1>Banco Asakura</h1>
                 </div>
                 <div>
+                    <h3 id="nombre"></h3>
+                </div>
+                <div>
                     <label>Número de Cuenta<input type="text" id="Cuenta" name="Cuenta" maxlength="6"/></label>
                     <label>NIP<input type="password" id="NIP" name="NIP" maxlength="4"/></label>
-                    <button type="submit" id="entre" onclick="validacionUsuario()">Entre</button>
+                    <button type="submit" id="entre" onclick="ejecucion()">Entre</button>
                 </div>
                 <div>
                     <button id="saldo">Consultar Saldo</button>
                     <button id="ingresar">Ingresar Monto</button>
                     <button id="retirar">Retirar Monto</button>
                 </div>
-                
+                <div>
+                    <p id="consola"></p>
+                </div>
 </body>
             
         </form>

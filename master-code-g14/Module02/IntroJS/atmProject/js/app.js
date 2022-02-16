@@ -45,14 +45,6 @@ function saludoPorHora(cliente) {
     return saludo;
 };
 
-/*Función que valida el nip ingresado por el cliente contra el de la base de datos*/
-function validacioNip(cliente) {
-    let nipInput = input("NIP");
-    let nipCliente = cuentas[cliente].nip;
-    if(nipInput == nipCliente){
-        alert(saludoPorHora(cliente))
-    }
-}
 
 /*Función que valida el numero de cuenta ingresado por el cliente contra el de la base de datos*/
 function validacionUsuario() {
@@ -65,20 +57,31 @@ function validacionUsuario() {
                 bandera = true;
             }
             else{
-            }        
-    }
-    if(bandera){
-        validacioNip(cuentaInput);
-    }
-    else{
-        alert("Hay algun error en los datos que ingresaste.");
+            }
+                
     }
     return bandera;
 };
 
+/*Función que valida el nip ingresado por el cliente contra el de la base de datos*/
+function validacioNip(cliente) {
+    let bandera = false;
+    let nipInput = input("NIP");
+    let nipCliente = cuentas[cliente].nip;
+    if(nipInput == nipCliente){
+        document.getElementById("nombre").innerHTML = saludoPorHora(cliente);
+        //alert(saludoPorHora(cliente))
+        bandera = true;
+    }
+    else{
+
+    }
+    return bandera;
+}
 /*Función que regresa el saldo en la cuenta*/
 function consultarSaldo(cliente) {
-    return alert(`Su saldo disponible es de $${cuentas[cliente].saldo}`);
+    return document.getElementById("consola").innerHTML = `Su saldo disponible es de $${cuentas[cliente].saldo}`;
+    //return alert(`Su saldo disponible es de $${cuentas[cliente].saldo}`);
 };
 
 /*Función que regresa el monto a depositar y el monto nuevo*/
@@ -86,7 +89,8 @@ function ingresarMonto(cliente) {
     let deposito = Number(prompt("Ingresa el monto a depositar"));
     let nuevoSaldo = cuentas[cliente].saldo + deposito;
     if(reglaDeNegocio(nuevoSaldo)){
-        alert(`Tú deposito fue por $${deposito} y tu nuevo total es de $${nuevoSaldo}`);
+        document.getElementById("consola").innerHTML = `Tú deposito fue por $${deposito} y tu nuevo total es de $${nuevoSaldo}`;
+        //alert(`Tú deposito fue por $${deposito} y tu nuevo total es de $${nuevoSaldo}`);
         cuentas[cliente].saldo = nuevoSaldo;
     }
 };
@@ -96,7 +100,8 @@ function retirarMonto(cliente) {
     let retiro = Number(prompt("Ingresa el monto a retirar"));
     let nuevoSaldo = cuentas[cliente].saldo - retiro;
     if(reglaDeNegocio(nuevoSaldo)){
-        alert(`Tú retiro fue por $${retiro} y tu nuevo total es de $${nuevoSaldo}`);
+        document.getElementById("consola").innerHTML = `Tú retiro fue por $${retiro} y tu nuevo total es de $${nuevoSaldo}`;
+        //alert(`Tú retiro fue por $${retiro} y tu nuevo total es de $${nuevoSaldo}`);
         cuentas[cliente].saldo = nuevoSaldo;
     }
 };
@@ -113,26 +118,6 @@ function reglaDeNegocio(nuevoSaldo) {
     return true;
 };
 
-
-function opciones(cliente, input) {
-    switch (input) {
-        case 1:
-            consultarSaldo(cliente);
-            break;
-
-        case 2: 
-            ingresarMonto(cliente);
-            break;
-        
-        case 3:
-            retirarMonto(cliente);
-            break;
-    
-        default:
-            break;
-    }
-}
-
 document.getElementById("NIP").addEventListener("keyup", function(event) {
     if (`KeyboardEvent: key ='${event.key}'` === 13) {
         event.preventDefault();
@@ -140,14 +125,29 @@ document.getElementById("NIP").addEventListener("keyup", function(event) {
     }
 });
 
-document.getElementById("saldo").addEventListener("click", function(){
-    consultarSaldo(cuentaInput);
-});
+/*Función que ejecuta las funciones*/
+function ejecucion() {
+    if (validacionUsuario()) {
+        if (validacioNip(cuentaInput)) {
+            document.getElementById("saldo").addEventListener("click", function () {
+                consultarSaldo(cuentaInput);
+            });
 
-document.getElementById("ingresar").addEventListener("click", function(){
-    ingresarMonto(cuentaInput);
-});
+            document.getElementById("ingresar").addEventListener("click", function () {
+                ingresarMonto(cuentaInput);
+            });
 
-document.getElementById("retirar").addEventListener("click", function(){
-    retirarMonto(cuentaInput);
-});
+            document.getElementById("retirar").addEventListener("click", function () {
+                retirarMonto(cuentaInput);
+            });
+        }
+        else{
+            alert("Tu NIP es incorrecto.");
+        }
+    }
+    else {
+        alert("Hay algun error en los datos que ingresaste.");
+    }
+}
+
+//html input required
