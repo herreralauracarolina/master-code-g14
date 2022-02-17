@@ -57,11 +57,21 @@ function validacionUsuario() {
                 bandera = true;
             }
             else{
-            }
-                
+            }           
     }
     return bandera;
 };
+
+function oportunidades(cliente) {
+    let intentos = 0;
+    while (!validacioNip(cliente)) {
+        if (intentos === 3) {break}
+        else{
+        };
+        intentos++;
+    }
+    return intentos;
+}
 
 /*Función que valida el nip ingresado por el cliente contra el de la base de datos*/
 function validacioNip(cliente) {
@@ -152,7 +162,7 @@ function ejecucion() {
             });
         }
         else{
-            alert("Tu NIP es incorrecto.");
+            alert(`Tu NIP es incorrecto.`);
         }
     }
     else {
