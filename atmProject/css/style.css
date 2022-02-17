@@ -1,0 +1,78 @@
+.bodyLogin{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 19%, rgba(189,145,106,1) 77%);
+    width: 100vw;
+    height: 100vh;
+}
+
+.loginDiv{
+    border-radius: 18px;
+    background-color:white;
+    height: auto;
+    top: 20vh;
+    position: relative;
+    width: 100%;
+}
+
+.loginContainer{
+    padding: 30px;
+}
+
+.bancoTitle{
+    width: 50%;
+    text-align: center;
+}
+.bancoTitle h5{
+    color:indianred;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+
+.customInput{
+    background-color:antiquewhite;
+    border-radius: 100px;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 14px;
+    
+}
+
+.customInput input{
+    align-items: flex-end;
+    position:relative;
+    border-style: none;
+    padding-left: 30px;
+    outline: none;
+}
+
+
+.btnlogIn{
+    border-radius: 100px;
+    color:indianred;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 14px;
+}
+
+.btn:hover{
+    color: darkgray;
+}
+.btn{
+    position:static;
+}
+.pop{
+    background-color: rgb(238,174,202);
+    width: 20%;
+    height: 20%;
+    color: rgba(238,174,202,1) 19%, rgba(189,145,106,1) 77%;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 30px;
+    min-height: 250px;
+    border-radius: 40px;
+    display: none;
+    float:right;
+}
